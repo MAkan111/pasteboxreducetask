@@ -32,14 +32,14 @@ public class PasteboxServiceTest {
     @Test
     public void getExistHash(){
         PasteboxEntity entity = new PasteboxEntity();
-        entity.setHash("1");
-        entity.setData("11");
+        entity.setHash("test12");
+        entity.setData("testtesttesttesttest");
         entity.setPublic(true);
 
-        when(pasteboxRepository.getByHash("1")).thenReturn(entity);
+        when(pasteboxRepository.getByHash("test12")).thenReturn(entity);
 
-        PasteboxResponse expected = new PasteboxResponse("11", true);
-        PasteboxResponse actual = pasteboxService.getByHash("1");
+        PasteboxResponse expected = new PasteboxResponse("testtesttesttesttest", true);
+        PasteboxResponse actual = pasteboxService.getByHash("test12");
 
         assertEquals(expected, actual);
     }
